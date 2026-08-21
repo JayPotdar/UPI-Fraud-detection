@@ -477,6 +477,7 @@ The project therefore focuses not only on obtaining predictions, but also on dem
 - reproducible model inference
 - API-based model serving
 
+
 ---
 
 ## 20. Conclusion
@@ -486,3 +487,12 @@ This project demonstrates an end-to-end machine learning workflow for UPI fraud 
 A key learning from the project is that improving a fraud detection system requires more than selecting increasingly complex algorithms. When the underlying features contain limited predictive signal, techniques such as class weighting, SMOTE, hyperparameter tuning, and threshold optimization cannot by themselves produce a reliable fraud detector.
 
 The next stage toward a stronger system would be incorporating historical and behavioral transaction features that better represent abnormal customer activity.
+
+## Installation/Deployment
+## Run with Docker
+
+Build the image:
+
+```bash
+docker build -t upi-fraud-api .
+
