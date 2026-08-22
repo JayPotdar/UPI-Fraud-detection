@@ -489,10 +489,33 @@ A key learning from the project is that improving a fraud detection system requi
 The next stage toward a stronger system would be incorporating historical and behavioral transaction features that better represent abnormal customer activity.
 
 ## Installation/Deployment
-## Run with Docker
+## 🐳 Run with Docker
 
-Build the image:
+Build the Docker image:
 
 ```bash
 docker build -t upi-fraud-api .
+```
 
+Run the container:
+
+```bash
+docker run -d --name upi-fraud-container -p 8000:8000 upi-fraud-api
+```
+
+Open the Swagger interface:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+
+**Live API:**  
+https://upi-fraud-detection-bdss.onrender.com
+
+**Interactive Swagger Documentation:**  
+https://upi-fraud-detection-bdss.onrender.com/docs
+
+The deployed API accepts transaction details, performs feature engineering and preprocessing, generates a fraud probability using the trained Logistic Regression model, and applies the configured decision threshold to classify the transaction as `Fraud` or `Genuine`.
+
+> **Note:** The service may take some time to respond to the first request after a period of inactivity if the cloud instance has spun down.
